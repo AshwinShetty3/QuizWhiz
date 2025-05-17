@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz - Interactive Quiz Platform</title>
+    <!-- Add basic styles before Tailwind loads -->
+    <style>
+        body { 
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .fallback-loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1.5rem;
+            color: #4B5563;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Ensure content is visible only after Tailwind loads
+        window.onload = function() {
+            document.body.classList.add('loaded');
+            document.getElementById('loading').style.display = 'none';
+        };
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="loading" class="fallback-loading">Loading QuizWhiz...</div>
+
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">QuizWhiz</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="https://github.com/AshwinShetty3/QuizWhiz" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16 min-h-screen">
+        <!-- Hero Section -->
+        <div class="bg-white">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 sm:text-5xl md:text-6xl">
+                        Challenge Your Knowledge
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                        An interactive quiz platform built with PHP, MySQL, and modern web technologies.
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://github.com/AshwinShetty3/QuizWhiz" 
+                           class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Key Features</h2>
+                </div>
+
+                <div class="mt-10">
+                    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-medium text-gray-900">User Authentication</h3>
+                            <p class="mt-2 text-gray-500">Secure login and registration system for users.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-medium text-gray-900">Random Quiz Generation</h3>
+                            <p class="mt-2 text-gray-500">Dynamic quiz generation for varied learning experience.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-medium text-gray-900">Performance Tracking</h3>
+                            <p class="mt-2 text-gray-500">Detailed statistics and progress monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Section -->
+        <div class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Tech Stack</h2>
+                    <div class="mt-10 flex flex-wrap justify-center gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🐘</div>
+                            <div class="text-gray-600">PHP</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🗄️</div>
+                            <div class="text-gray-600">MySQL</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🎨</div>
+                            <div class="text-gray-600">Tailwind CSS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">📊</div>
+                            <div class="text-gray-600">Chart.js</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-500 text-sm">
+                Made with ❤️ by Ashwin Shetty
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
